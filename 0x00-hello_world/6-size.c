@@ -1,8 +1,7 @@
 #include<stdio.h>
 /**
- * main - entry point
- * description program prints size of different data types
- * Retrun: 0 if exited properly non zero value other wise
+ *main - program prints size of different data types
+ *Retrun: Always 0 if exited properly non zero value other wise
  */
 int main(void)
 {
