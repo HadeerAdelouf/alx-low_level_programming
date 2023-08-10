@@ -1,7 +1,7 @@
 #include<stdio.h>
 /**
- *main - program prints size of different data types
- *Retrun: Always 0 if exited properly non zero value other wise
+ * main - prints the size of various types
+ * Return: 0 if exited properly, non-zero otherwise
  */
 int main(void)
 {
