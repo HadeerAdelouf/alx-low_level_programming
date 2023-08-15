@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include"main.h"
 
 /**
  * main - computes and prints the sum of all the multiples
@@ -15,6 +16,6 @@ for (n = 0; n < 1024 ; n++)
 		sum += n;
 }
 printf("%d\n", sum);
-retrun(0);
+return (0);
 }
 
