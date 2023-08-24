@@ -10,20 +10,10 @@ char *_strcat(char *dest, char *src)
 
 	int i = 0, j = 0;
 
-	while (*src[i] != '\0')
-{
-		*mix[j] = *src[i];
+	while (dest[i])
 		i++;
-		j++;
-}
-while (*dest[i] != '\0')
-{
-		*mix[j] = *dest[i];
-		i++;
-		j++;
-}
-	*mix[j] = '\0';
-
-	printf("\nConcatenated string: %s", *mix);
+	for (j = 0 ; src[j] ; j++)
+		dest[i] = src[j];
+	i++;
 	return (*dest);
 }
