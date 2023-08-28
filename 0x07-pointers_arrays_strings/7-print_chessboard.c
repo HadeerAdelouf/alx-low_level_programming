@@ -2,8 +2,8 @@
 
 /**
  * print_chessboard - prints the chessboard
- * @a: pointer to pieces to print
- * Return: void
+ * @a: array
+ * Return: always 0
  */
 void print_chessboard(char (*a)[8])
 {
