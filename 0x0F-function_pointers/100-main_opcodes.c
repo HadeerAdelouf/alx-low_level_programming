@@ -7,21 +7,32 @@
  *@argv:argument vector
  *Return:always 0
  */
-int main(int argc, char **argv)
+int main(int argc, char *argv[])
 {
-	char *ptr = (char *)main;
-	int b;
+	char *ptr = (char *) main;
+	int i, bytes;
 
 	if (argc != 2)
+	{
 		printf("Error\n");
-	exit(1);
-	b = atoi(argv[1]);
-	if (b < 0)
+		exit(1);
+	}
+
+	bytes = atoi(argv[1]);
+
+	if (bytes < 0)
 	{
 		printf("Error\n");
 		exit(2);
 	}
-	while (b--)
-		printf("%02hhx%s", *ptr++, b ? " " : "\n");
+
+	for (i = 0; i < bytes; i++)
+	{
+		printf("%02x", ptr[i] & 0xFF);
+		if (i != bytes - 1)
+			printf(" ");
+	}
+
+	printf("\n");
 	return (0);
 }
