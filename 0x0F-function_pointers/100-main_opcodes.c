@@ -24,3 +24,4 @@ int main(int argc, char **argv)
 	while (b--)
 		printf("%02hhx%s", *ptr++, b ? " " : "\n");
 	return (0);
+}
