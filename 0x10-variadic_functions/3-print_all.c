@@ -2,43 +2,49 @@
 /**
  * print_all - prints anything.
  * @format: a list of types of arguments passed to the function.
- * Return:void
+ * Return:void.
  */
 void print_all(const char * const format, ...)
 {
 	va_list args;
-	int i = 0;
-	char c;
-	char *s;
-	float f;
+	unsigned int i = 0, j, c = 0;
+	char *str;
+	const char arg[] = "cifs";
 
 	va_start(args, format);
 	while (format && format[i])
 	{
-		c = format[i];
-
-		if (c == 'c')
-			printf("%c", va_arg(args, int));
-		else if (c == 'i')
+		j = 0;
+		while (arg[j])
 		{
-			printf("%d", va_arg(args, int));
+			if (format[i] == arg[j] && c)
+			{
+				printf(", ");
+				break;
+			} j++;
 		}
-		else if (c == 'f')
+		switch (format[i])
 		{
-			printf("%f", va_arg(args, double));
-		}
-		else if (c == 's')
-		{
-			s = va_arg(args, char *);
-			if (s == NULL)
+		case 'c':
+			printf("%c", va_arg(args, int)), c = 1;
+			break;
+		case 'i':
+			printf("%d", va_arg(args, int)), c = 1;
+			break;
+		case 'f':
+			printf("%f", va_arg(args, double)), c = 1;
+			break;
+		case 's':
+			str = va_arg(args, char *), c = 1;
+			if (!str)
+			{
 				printf("(nil)");
-			else
-				printf("%s", s);
+				break;
+			}
+			printf("%s", str);
+			break;
 		}
-
-		i++;
-		if (format[i])
-			printf(", ");
+	       	i++;
 	}
 	printf("\n");
 	va_end(args);
