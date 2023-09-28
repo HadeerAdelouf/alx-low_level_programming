@@ -1,18 +1,18 @@
-#include"main.h"
+#include "main.h"
 /**
- * get_bit - gets the bit at the given index
- * @n: number of index
- * @index: is the index, starting from 0 of the bit to get
- * Return:the value of the bit at index index or -1 if fails
+ * get_bit - return one bit
+ * @n: the number
+ * @index: the position to read the bit
+ * Return: the value of the bit at index or -1 if an error occured
  */
 int get_bit(unsigned long int n, unsigned int index)
 {
-		if (index >= sizeof(n) * 8)
-		{
-		return (-1);
-		}
-		unsigned long int bit;
+	unsigned long int bit;
 
-		bit = (n >> index) & 0x1;
-		return (bit);
+	if (index > 64)
+		return (-1);
+
+	bit = n >> index;
+
+	return (bit & 0x1);
 }
