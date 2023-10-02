@@ -1,17 +1,4 @@
 #include"main.h"
-
-#define BUFFER_SIZE 1024
-/**
- * print_error_exit - prints error messg
- * @code:number of exit
- * @message:message to print
- * Return:code number
- */
-void print_error_exit(int code, const char *message)
-{
-	dprintf(STDERR_FILENO, "Error: %s\n", message);
-	exit(code);
-}
 /**
  * main - Copies the contents of a file to another file.
  * @argc: The number of arguments
