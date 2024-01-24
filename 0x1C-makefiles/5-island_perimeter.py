@@ -4,7 +4,7 @@
 
 def island_perimeter(grid):
     """
-    Return the perimiter of an island in a grid which 
+    Return the perimiter of an island in a grid which
     represents water by 0 and land by 1.
     """
     width = len(grid[0])
